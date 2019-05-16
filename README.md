@@ -8,12 +8,12 @@ May 16th, 2019
 | ----------------------------------- | ------------- | ---------- |
 |                                     |               |            |
 | **Event, Timer, and Task Priority Services**                     |
-| CreateEvent                         |               |            |
-| CreateEventEx                       |               |            |
-| CloseEvent                          |               |            |
-| SignalEvent                         |               |            |
-| WaitForEvent                        |               |            |
-| CheckEvent                          |               |            |
+| CreateEvent                         | PASS          | FAIL       |
+| CreateEventEx                       | PASS          | FAIL       |
+| CloseEvent                          | N/A           | PASS       |
+| SignalEvent                         | N/A           | PASS       |
+| WaitForEvent                        | PASS          | PASS       |
+| CheckEvent                          | PASS          | PASS       |
 | SetTimer                            |               |            |
 | RaiseTPL                            |               |            |
 | Restore TPL                         |               |            |
@@ -27,7 +27,7 @@ May 16th, 2019
 |                                     |               |            |
 | **Protocol Handler Services**                                    |
 | InstallProtocolInterface            | PASS          | PASS       |
-| UninstallProtocolInterface          |               |            |
+| UninstallProtocolInterface          | PASS          | FAIL       |
 | ReinstallProtocolInterface          |               |            |
 | RegisterProtocolNotify              |               |            |
 | LocateHandle                        |               |            |
@@ -42,7 +42,7 @@ May 16th, 2019
 | LocateHandleBuffer                  | PASS          | FAIL       |
 | LocateProtocol                      | PASS          | FAIL       |
 | InstallMultipleProtocolInterfaces   | PASS          | PASS       |
-| UninstallMultipleProtocolInterfaces |               |            |
+| UninstallMultipleProtocolInterfaces | PASS          | FAIL       |
 |                                     |               |            |
 | **Images Services**                                              |
 | LoadImage                           |               |            |
@@ -52,11 +52,11 @@ May 16th, 2019
 | ExitBootServices                    |               |            |
 |                                     |               |            |
 | **Miscellaneous Boot Services**                                  |
-| SetWatchDogTimer                    |               |            |
+| SetWatchDogTimer                    | N/A           | FAIL       |
 | Stall                               | N/A           | PASS       |
 | CopyMem                             | N/A           | PASS       |
 | SetMem                              | N/A           | PASS       |
-| GetNextMonotonicCount               |               |            |
+| GetNextMonotonicCount               | FAIL          | FAIL       |
 | InstallConfigurationTable           | PASS          | PASS       |
 | CalculateCrc32                      | PASS          | PASS       |
 |                                     |               |            |
