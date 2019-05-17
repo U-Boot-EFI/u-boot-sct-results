@@ -1,6 +1,6 @@
 # SCT test results
 
-May 16th, 2019
+May 17th, 2019
 
 ## Boot services
 
@@ -14,9 +14,9 @@ May 16th, 2019
 | SignalEvent                         | N/A           | PASS       |
 | WaitForEvent                        | PASS          | PASS       |
 | CheckEvent                          | PASS          | PASS       |
-| SetTimer                            |               |            |
-| RaiseTPL                            |               |            |
-| Restore TPL                         |               |            |
+| SetTimer                            | PASS          | FAIL       |
+| RaiseTPL                            | N/A           | PASS       |
+| Restore TPL                         | N/A           | PASS       |
 |                                     |               |            |
 | **Memory Allocation Services**                                   |
 | AllocatePages                       | PASS          | PASS       |
@@ -28,8 +28,8 @@ May 16th, 2019
 | **Protocol Handler Services**                                    |
 | InstallProtocolInterface            | PASS          | PASS       |
 | UninstallProtocolInterface          | PASS          | FAIL       |
-| ReinstallProtocolInterface          |               |            |
-| RegisterProtocolNotify              |               |            |
+| ReinstallProtocolInterface          | PASS          | FAIL       |
+| RegisterProtocolNotify              | PASS          | PASS       |
 | LocateHandle                        |               |            |
 | HandleProtocol                      | PASS          | PASS       |
 | LocateDevicePath                    | PASS          | FAIL       |
