@@ -2,6 +2,14 @@
 
 May 18th, 2019
 
+The UEFI SCT test implementation has seperate routines for testing if parameters
+are correctly checked (conformance tests) and if a function does it jobs
+(function tests).
+
+* FAIL signifies that at least one failure was reported. It does not imply that
+  the function is not working at all.
+* N/A signifies that no test for this category is available.
+
 ## Boot services
 
 | Service                             | Conformance | Function   |
