@@ -68,8 +68,9 @@ May 18th, 2019
 | ----------------------------------- | ----------- | ---------- |
 |                                     |             |            |
 | **LoadedImageProtocol**                           |            |
-| Test 1                              | N/A         |            |
-|                                     | N/A         |            |
+| Test 1                              | N/A         | PASS       |
+| Teet 2                              | N/A         | PASS       |
+|                                     |             |            |
 | **UnicodeCollationProtocol**                                   |
 | FatToStr                            | N/A         | PASS       |
 | MetaiMatch                          | N/A         | FAIL       |
