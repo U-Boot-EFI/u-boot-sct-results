@@ -86,4 +86,20 @@ are correctly checked (conformance tests) and if a function does it jobs
 | StrLwr                              | N/A         | PASS       |
 | StrToFat                            | N/A         | FAIL       |
 | StrUpr                              | N/A         | FAIL       |
+|                                     |             |            |
+
+
+## ConsoleSupportTest
+
+| Test                                | Conformance | Function   |
+| ----------------------------------- | ----------- | ---------- |
+|                                     |             |            |
+| SimpleTextInputExProtocolTest       | FAIL 1)     | N/A        |
+| SimpleInputProtocolTest             | PASS        | N/A        |
+| SimpleOutputProtocolTest            | N/A         | CRASH      |
+|                                     |             |            |
+
+1) SetToggleState returns EFI\_UNSUPPORTED. SCT expected
+   EFI\_INVALID\_PARAMETER for invalid parameter. Testing a parameter
+   for an unsupported function does not make much sense.
 
