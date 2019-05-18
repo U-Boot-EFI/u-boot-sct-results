@@ -1,6 +1,6 @@
 # SCT test results
 
-May 17th, 2019
+May 18th, 2019
 
 ## Boot services
 
@@ -46,17 +46,17 @@ May 17th, 2019
 |                                     |             |            |
 | **Images Services**                                            |
 | LoadImage                           | FAIL        | FAIL       |
-| StartImage                          |             |            |
-| UnloadImage                         |             |            |
-| Exit                                |             |            |
-| ExitBootServices                    |             |            |
+| StartImage                          | PASS        | FAIL       |
+| UnloadImage                         | PASS        | FAIL       |
+| Exit                                | PASS        | FAIL       |
+| ExitBootServices                    | N/A         | FAIL       |
 |                                     |             |            |
 | **Miscellaneous Boot Services**                                |
 | SetWatchDogTimer                    | N/A         | FAIL       |
 | Stall                               | N/A         | PASS       |
 | CopyMem                             | N/A         | PASS       |
 | SetMem                              | N/A         | PASS       |
-| GetNextMonotonicCount               | FAIL        | FAIL       |
+| GetNextMonotonicCount               | PASS        | FAIL       |
 | InstallConfigurationTable           | PASS        | PASS       |
 | CalculateCrc32                      | PASS        | PASS       |
 |                                     |             |            |
