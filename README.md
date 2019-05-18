@@ -60,3 +60,21 @@ May 18th, 2019
 | InstallConfigurationTable           | PASS        | PASS       |
 | CalculateCrc32                      | PASS        | PASS       |
 |                                     |             |            |
+
+
+## Protcols
+
+| Protocol                            | Conformance | Function   |
+| ----------------------------------- | ----------- | ---------- |
+|                                     |             |            |
+| **LoadedImageProtocol**                           |            |
+| Test 1                              | N/A         |            |
+|                                     | N/A         |            |
+| **UnicodeCollationProtocol**                                   |
+| FatToStr                            | N/A         | PASS       |
+| MetaiMatch                          | N/A         | FAIL       |
+| StriColl                            | N/A         | PASS       |
+| StrLwr                              | N/A         | PASS       |
+| StrToFat                            | N/A         | FAIL       |
+| StrUpr                              | N/A         | FAIL       |
+
