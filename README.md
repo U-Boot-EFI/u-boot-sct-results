@@ -1,6 +1,6 @@
 # SCT test results
 
-May 18th, 2019
+May 19th, 2019
 
 The UEFI SCT test implementation has seperate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
@@ -69,6 +69,29 @@ are correctly checked (conformance tests) and if a function does it jobs
 | CalculateCrc32                      | PASS        | PASS       |
 |                                     |             |            |
 
+## Runtime services
+
+| Service                              | Conformance | Function   |
+| ------------------------------------ | ----------- | ---------- |
+|                                      |             |            |
+| **Variable Services**                                           |
+| AuthVar                              | FAIL        | FAIL       |
+| GetNextVariableName                  | PASS        | PASS       |
+| GetVariable                          | PASS        | FAIL       |
+| HardwareErrorRecord                  | FAIL        | FAIL       |
+| QueryVariableInfo                    | FAIL        | No support |
+| SetVariable                          | FAIL        | FAIL       |
+|                                      |             |            |
+| **Time Services**                                               |
+| GetTime                              | PASS        | PASS       |
+| GetWakeupTime                        | No support  | No support |
+| SetTime                              | FAIL        | FAIL       |
+| SetWakeupTime                        | No support  | No support |
+|                                      |             |            |
+| **Miscellaneous Runtime Services **                             |
+| QueryCapsuleCapabilities             | PASS        | PASS       |
+| ResetSystem                          | N/A         | PASS       |
+| UpdateCapsule                        | FAIL        | N/A        |
 
 ## Protcols
 
