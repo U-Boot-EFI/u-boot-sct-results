@@ -1,6 +1,6 @@
 # SCT test results
 
-May 19th, 2019
+May 29th, 2019
 
 The UEFI SCT test implementation has seperate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
@@ -38,16 +38,16 @@ are correctly checked (conformance tests) and if a function does it jobs
 | UninstallProtocolInterface          | PASS        | FAIL       |
 | ReinstallProtocolInterface          | PASS        | FAIL       |
 | RegisterProtocolNotify              | PASS        | PASS       |
-| LocateHandle                        | PASS        | FAIL       |
+| LocateHandle                        | PASS        | PASS       |
 | HandleProtocol                      | PASS        | PASS       |
-| LocateDevicePath                    | PASS        | FAIL       |
+| LocateDevicePath                    | PASS        | PASS       |
 | OpenProtocol                        | PASS        | CRASH      |
 | CloseProtocol                       | PASS        | PASS       |
 | OpenProtocolInformation             | PASS        | FAIL       |
 | ConnectController                   | PASS        | FAIL       |
 | DisconnectController                | PASS        | FAIL       |
 | ProtocolsPerHandle                  | PASS        | PASS       |
-| LocateHandleBuffer                  | PASS        | FAIL       |
+| LocateHandleBuffer                  | PASS        | PASS       |
 | LocateProtocol                      | PASS        | FAIL       |
 | InstallMultipleProtocolInterfaces   | PASS        | PASS       |
 | UninstallMultipleProtocolInterfaces | PASS        | FAIL       |
@@ -93,7 +93,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 | ResetSystem                          | N/A         | PASS       |
 | UpdateCapsule                        | FAIL        | N/A        |
 
-## Protcols
+## Protocols
 
 | Protocol                            | Conformance | Function   |
 | ----------------------------------- | ----------- | ---------- |
