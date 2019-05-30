@@ -1,6 +1,6 @@
 # SCT test results
 
-May 29th, 2019
+May 30th, 2019
 
 The UEFI SCT test implementation has seperate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
@@ -35,20 +35,20 @@ are correctly checked (conformance tests) and if a function does it jobs
 |                                     |             |            |
 | **Protocol Handler Services**                                  |
 | InstallProtocolInterface            | PASS        | PASS       |
-| UninstallProtocolInterface          | PASS        | FAIL       |
-| ReinstallProtocolInterface          | PASS        | FAIL       |
+| UninstallProtocolInterface          | PASS        | PASS       |
+| ReinstallProtocolInterface          | PASS        | PASS       |
 | RegisterProtocolNotify              | PASS        | PASS       |
 | LocateHandle                        | PASS        | PASS       |
 | HandleProtocol                      | PASS        | PASS       |
 | LocateDevicePath                    | PASS        | PASS       |
-| OpenProtocol                        | PASS        | CRASH      |
+| OpenProtocol                        | PASS        | PASS       |
 | CloseProtocol                       | PASS        | PASS       |
 | OpenProtocolInformation             | PASS        | FAIL       |
 | ConnectController                   | PASS        | FAIL       |
 | DisconnectController                | PASS        | FAIL       |
 | ProtocolsPerHandle                  | PASS        | PASS       |
 | LocateHandleBuffer                  | PASS        | PASS       |
-| LocateProtocol                      | PASS        | FAIL       |
+| LocateProtocol                      | PASS        | PASS       |
 | InstallMultipleProtocolInterfaces   | PASS        | PASS       |
 | UninstallMultipleProtocolInterfaces | PASS        | FAIL       |
 |                                     |             |            |
@@ -88,7 +88,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 | SetTime                              | FAIL        | FAIL       |
 | SetWakeupTime                        | No support  | No support |
 |                                      |             |            |
-| **Miscellaneous Runtime Services **                             |
+| **Miscellaneous Runtime Services**                              |
 | QueryCapsuleCapabilities             | PASS        | PASS       |
 | ResetSystem                          | N/A         | PASS       |
 | UpdateCapsule                        | FAIL        | N/A        |
