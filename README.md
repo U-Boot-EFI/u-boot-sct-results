@@ -1,6 +1,6 @@
 # SCT test results
 
-May 30th, 2019
+May 31st, 2019
 
 The UEFI SCT test implementation has seperate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
@@ -85,13 +85,16 @@ are correctly checked (conformance tests) and if a function does it jobs
 | **Time Services**                                               |
 | GetTime                              | PASS        | PASS       |
 | GetWakeupTime                        | No support  | No support |
-| SetTime                              | FAIL        | FAIL       |
+| SetTime                              | PASS        | FAIL 1)    |
 | SetWakeupTime                        | No support  | No support |
 |                                      |             |            |
 | **Miscellaneous Runtime Services**                              |
 | QueryCapsuleCapabilities             | PASS        | PASS       |
 | ResetSystem                          | N/A         | PASS       |
 | UpdateCapsule                        | FAIL        | N/A        |
+
+1) Setting of daylight saving time is not fully supported, setting
+   the time zone is not supported.
 
 ## Protocols
 
