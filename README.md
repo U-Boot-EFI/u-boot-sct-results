@@ -57,7 +57,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 | StartImage                          | PASS        | FAIL       |
 | UnloadImage                         | PASS        | FAIL       |
 | Exit                                | PASS        | FAIL       |
-| ExitBootServices                    | N/A         | FAIL       |
+| ExitBootServices                    | FAIL        | N/A        |
 |                                     |             |            |
 | **Miscellaneous Boot Services**                                |
 | SetWatchDogTimer                    | N/A         | FAIL       |
