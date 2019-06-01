@@ -1,6 +1,6 @@
 # SCT test results
 
-May 31st, 2019
+June 1st, 2019
 
 The UEFI SCT test implementation has seperate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
@@ -43,14 +43,14 @@ are correctly checked (conformance tests) and if a function does it jobs
 | LocateDevicePath                    | PASS        | PASS       |
 | OpenProtocol                        | PASS        | PASS       |
 | CloseProtocol                       | PASS        | PASS       |
-| OpenProtocolInformation             | PASS        | FAIL       |
+| OpenProtocolInformation             | PASS        | PASS       |
 | ConnectController                   | PASS        | FAIL       |
 | DisconnectController                | PASS        | FAIL       |
 | ProtocolsPerHandle                  | PASS        | PASS       |
 | LocateHandleBuffer                  | PASS        | PASS       |
 | LocateProtocol                      | PASS        | PASS       |
 | InstallMultipleProtocolInterfaces   | PASS        | PASS       |
-| UninstallMultipleProtocolInterfaces | PASS        | FAIL       |
+| UninstallMultipleProtocolInterfaces | PASS        | FAIL 1)    |
 |                                     |             |            |
 | **Images Services**                                            |
 | LoadImage                           | FAIL        | FAIL       |
@@ -68,6 +68,9 @@ are correctly checked (conformance tests) and if a function does it jobs
 | InstallConfigurationTable           | PASS        | PASS       |
 | CalculateCrc32                      | PASS        | PASS       |
 |                                     |             |            |
+
+1) FAIL due to bug in SCT, cf.
+   https://bugzilla.tianocore.org/show_bug.cgi?id=1869
 
 ## Runtime services
 
