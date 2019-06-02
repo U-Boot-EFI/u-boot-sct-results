@@ -1,6 +1,6 @@
 # SCT test results
 
-June 1st, 2019
+June 2nd, 2019
 
 The UEFI SCT test implementation has seperate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
@@ -22,7 +22,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 | SignalEvent                         | N/A         | PASS       |
 | WaitForEvent                        | PASS        | PASS       |
 | CheckEvent                          | PASS        | PASS       |
-| SetTimer                            | PASS        | FAIL       |
+| SetTimer                            | PASS        | PASS       |
 | RaiseTPL                            | N/A         | PASS       |
 | Restore TPL                         | N/A         | PASS       |
 |                                     |             |            |
@@ -55,12 +55,12 @@ are correctly checked (conformance tests) and if a function does it jobs
 | **Images Services**                                            |
 | LoadImage                           | FAIL        | FAIL       |
 | StartImage                          | PASS        | FAIL       |
-| UnloadImage                         | PASS        | FAIL       |
-| Exit                                | PASS        | FAIL       |
+| UnloadImage                         | PASS        | PASS       |
+| Exit                                | PASS        | PASS       |
 | ExitBootServices                    | FAIL        | N/A        |
 |                                     |             |            |
 | **Miscellaneous Boot Services**                                |
-| SetWatchDogTimer                    | N/A         | FAIL       |
+| SetWatchDogTimer                    | N/A         | PASS       |
 | Stall                               | N/A         | PASS       |
 | CopyMem                             | N/A         | PASS       |
 | SetMem                              | N/A         | PASS       |
