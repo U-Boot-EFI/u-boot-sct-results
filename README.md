@@ -1,8 +1,8 @@
 # SCT test results
 
-June 2nd, 2019
+June 10th, 2019
 
-The UEFI SCT test implementation has seperate routines for testing if parameters
+The UEFI SCT test implementation has separate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
 (function tests).
 
@@ -16,8 +16,8 @@ are correctly checked (conformance tests) and if a function does it jobs
 | ----------------------------------- | ----------- | ---------- |
 |                                     |             |            |
 | **Event, Timer, and Task Priority Services**                   |
-| CreateEvent                         | PASS        | FAIL       |
-| CreateEventEx                       | PASS        | FAIL       |
+| CreateEvent                         | PASS        | PASS       |
+| CreateEventEx                       | PASS        | PASS       |
 | CloseEvent                          | N/A         | PASS       |
 | SignalEvent                         | N/A         | PASS       |
 | WaitForEvent                        | PASS        | PASS       |
