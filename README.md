@@ -1,6 +1,6 @@
 # SCT test results
 
-June 10th, 2019
+June 11th, 2019
 
 The UEFI SCT test implementation has separate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
@@ -54,7 +54,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 |                                     |             |            |
 | **Images Services**                                            |
 | LoadImage                           | FAIL        | FAIL       |
-| StartImage                          | PASS        | FAIL       |
+| StartImage                          | PASS        | PASS       |
 | UnloadImage                         | PASS        | PASS       |
 | Exit                                | PASS        | PASS       |
 | ExitBootServices                    | FAIL        | N/A        |
