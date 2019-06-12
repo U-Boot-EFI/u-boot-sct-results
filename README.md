@@ -1,6 +1,6 @@
 # SCT test results
 
-June 11th, 2019
+June 12th, 2019
 
 The UEFI SCT test implementation has separate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
@@ -110,12 +110,15 @@ are correctly checked (conformance tests) and if a function does it jobs
 |                                     |             |            |
 | **UnicodeCollationProtocol**                                   |
 | FatToStr                            | N/A         | PASS       |
-| MetaiMatch                          | N/A         | FAIL       |
+| MetaiMatch                          | N/A         | PASS       |
 | StriColl                            | N/A         | PASS       |
 | StrLwr                              | N/A         | PASS       |
-| StrToFat                            | N/A         | FAIL       |
-| StrUpr                              | N/A         | FAIL       |
+| StrToFat                            | N/A         | PASS       |
+| StrUpr                              | N/A         | FAIL 1)    |
 |                                     |             |            |
+
+1) UEFI SCT reports a false positive when converting Cyrrilic letters, cf.
+   https://bugzilla.tianocore.org/show_bug.cgi?id=1911
 
 
 ## ConsoleSupportTest
