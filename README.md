@@ -1,6 +1,6 @@
 # SCT test results
 
-June 12th, 2019
+June 14th, 2019
 
 The UEFI SCT test implementation has separate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
@@ -128,7 +128,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 |                                     |             |            |
 | SimpleTextInputExProtocolTest       | FAIL 1)     | N/A        |
 | SimpleInputProtocolTest             | PASS        | N/A        |
-| SimpleOutputProtocolTest            | N/A         | CRASH      |
+| SimpleOutputProtocolTest            | N/A         | PASS       |
 |                                     |             |            |
 
 1) SetToggleState returns EFI\_UNSUPPORTED. SCT expected
