@@ -210,9 +210,9 @@ are correctly checked (conformance tests) and if a function does it jobs
 | TestString                          | N/A         | PASS       |
 |                                     |             |            |
 | **GraphicsOutputProtocol**          |             |            |
-| BltVideoBltBuffer                   | N/A         | -          |
-| BltVideoFill                        | N/A         | -          |
-| BltVideoToVideo                     | N/A         | -          |
-| Blt                                 | -           | N/A        |
-| QueryMode                           | -           | -          |
-| SetMode                             | -           | -          |
+| BltVideoBltBuffer                   | N/A         | PASS       |
+| BltVideoFill                        | N/A         | PASS       |
+| BltVideoToVideo                     | N/A         | PASS       |
+| Blt                                 | PASS        | N/A        |
+| QueryMode                           | PASS        | PASS       |
+| SetMode                             | PASS        | PASS       |
