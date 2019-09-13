@@ -8,7 +8,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 
 * FAIL signifies that at least one failure was reported. It does not imply that
   the function is not working at all.
-* - signifies that the test reported no result
+* \- signifies that the test reported no result
 * N/A signifies that no test for this category is available.
 
 ## Boot services
