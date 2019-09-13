@@ -1,6 +1,6 @@
 # SCT test results
 
-June 14th, 2019
+Spetember 12th, 2019
 
 The UEFI SCT test implementation has separate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
@@ -8,6 +8,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 
 * FAIL signifies that at least one failure was reported. It does not imply that
   the function is not working at all.
+* - signifies that the test reported no result
 * N/A signifies that no test for this category is available.
 
 ## Boot services
@@ -16,61 +17,58 @@ are correctly checked (conformance tests) and if a function does it jobs
 | ----------------------------------- | ----------- | ---------- |
 |                                     |             |            |
 | **Event, Timer, and Task Priority Services**                   |
-| CreateEvent                         | PASS        | PASS       |
-| CreateEventEx                       | PASS        | PASS       |
-| CloseEvent                          | N/A         | PASS       |
-| SignalEvent                         | N/A         | PASS       |
-| WaitForEvent                        | PASS        | PASS       |
 | CheckEvent                          | PASS        | PASS       |
-| SetTimer                            | PASS        | PASS       |
+| CloseEvent                          | N/A         | PASS       |
+| CreateEventEx                       | PASS        | PASS       |
+| CreateEvent                         | PASS        | PASS       |
 | RaiseTPL                            | N/A         | PASS       |
 | Restore TPL                         | N/A         | PASS       |
+| SignalEvent                         | N/A         | PASS       |
+| SetTimer                            | PASS        | PASS       |
+| WaitForEvent                        | PASS        | PASS       |
 |                                     |             |            |
 | **Memory Allocation Services**                                 |
 | AllocatePages                       | PASS        | PASS       |
-| FreePages                           | PASS        | PASS       |
-| GetMemoryMap                        | PASS        | PASS       |
 | AllocatePool                        | PASS        | PASS       |
+| FreePages                           | PASS        | PASS       |
 | FreePool                            | PASS        | PASS       |
+| GetMemoryMap                        | PASS        | PASS       |
 |                                     |             |            |
 | **Protocol Handler Services**                                  |
-| InstallProtocolInterface            | PASS        | PASS       |
-| UninstallProtocolInterface          | PASS        | PASS       |
-| ReinstallProtocolInterface          | PASS        | PASS       |
-| RegisterProtocolNotify              | PASS        | PASS       |
-| LocateHandle                        | PASS        | PASS       |
-| HandleProtocol                      | PASS        | PASS       |
-| LocateDevicePath                    | PASS        | PASS       |
-| OpenProtocol                        | PASS        | PASS       |
 | CloseProtocol                       | PASS        | PASS       |
-| OpenProtocolInformation             | PASS        | PASS       |
 | ConnectController                   | PASS        | FAIL       |
 | DisconnectController                | PASS        | FAIL       |
-| ProtocolsPerHandle                  | PASS        | PASS       |
-| LocateHandleBuffer                  | PASS        | PASS       |
-| LocateProtocol                      | PASS        | PASS       |
+| HandleProtocol                      | PASS        | PASS       |
 | InstallMultipleProtocolInterfaces   | PASS        | PASS       |
-| UninstallMultipleProtocolInterfaces | PASS        | FAIL 1)    |
+| InstallProtocolInterface            | PASS        | PASS       |
+| LocateDevicePath                    | PASS        | PASS       |
+| LocateHandleBuffer                  | PASS        | PASS       |
+| LocateHandle                        | PASS        | PASS       |
+| LocateProtocol                      | PASS        | PASS       |
+| OpenProtocolInformation             | PASS        | PASS       |
+| OpenProtocol                        | PASS        | PASS       |
+| ProtocolsPerHandle                  | PASS        | PASS       |
+| RegisterProtocolNotify              | PASS        | PASS       |
+| ReinstallProtocolInterface          | PASS        | PASS       |
+| UninstallMultipleProtocolInterfaces | PASS        | PASS       |
+| UninstallProtocolInterface          | PASS        | PASS       |
 |                                     |             |            |
 | **Images Services**                                            |
-| LoadImage                           | FAIL        | FAIL       |
+| ExitBootServices                    | -           | N/A        |
+| Exit                                | PASS        | PASS       |
+| LoadImage                           | PASS        | FAIL       |
 | StartImage                          | PASS        | PASS       |
 | UnloadImage                         | PASS        | PASS       |
-| Exit                                | PASS        | PASS       |
-| ExitBootServices                    | FAIL        | N/A        |
 |                                     |             |            |
 | **Miscellaneous Boot Services**                                |
-| SetWatchDogTimer                    | N/A         | PASS       |
-| Stall                               | N/A         | PASS       |
+| CalculateCrc32                      | PASS        | PASS       |
 | CopyMem                             | N/A         | PASS       |
-| SetMem                              | N/A         | PASS       |
 | GetNextMonotonicCount               | PASS        | FAIL       |
 | InstallConfigurationTable           | PASS        | PASS       |
-| CalculateCrc32                      | PASS        | PASS       |
+| SetMem                              | N/A         | PASS       |
+| SetWatchDogTimer                    | -           | PASS       |
+| Stall                               | N/A         | PASS       |
 |                                     |             |            |
-
-1) FAIL due to bug in SCT, cf.
-   https://bugzilla.tianocore.org/show_bug.cgi?id=1869
 
 ## Runtime services
 
@@ -80,16 +78,16 @@ are correctly checked (conformance tests) and if a function does it jobs
 | **Variable Services**                                           |
 | AuthVar                              | FAIL        | FAIL       |
 | GetNextVariableName                  | PASS        | PASS       |
-| GetVariable                          | PASS        | FAIL       |
-| HardwareErrorRecord                  | FAIL        | FAIL       |
-| QueryVariableInfo                    | FAIL        | No support |
+| GetVariable                          | PASS        | PASS       |
+| HardwareErrorRecord                  | -           | -          |
+| QueryVariableInfo                    | FAIL        | -          |
 | SetVariable                          | FAIL        | FAIL       |
 |                                      |             |            |
 | **Time Services**                                               |
 | GetTime                              | PASS        | PASS       |
-| GetWakeupTime                        | No support  | No support |
+| GetWakeupTime                        | -           | -          |
 | SetTime                              | PASS        | FAIL 1)    |
-| SetWakeupTime                        | No support  | No support |
+| SetWakeupTime                        | -           | -          |
 |                                      |             |            |
 | **Miscellaneous Runtime Services**                              |
 | QueryCapsuleCapabilities             | PASS        | PASS       |
@@ -104,34 +102,117 @@ are correctly checked (conformance tests) and if a function does it jobs
 | Protocol                            | Conformance | Function   |
 | ----------------------------------- | ----------- | ---------- |
 |                                     |             |            |
-| **LoadedImageProtocol**                           |            |
+| **LoadedImageProtocol**                                        |
 | Test 1                              | N/A         | PASS       |
 | Teet 2                              | N/A         | PASS       |
 |                                     |             |            |
-| **UnicodeCollationProtocol**                                   |
+| **DevicePathProtocol**                                         |
+| PathNodeConf                        | PASS        | N/A        |
+|                                     |             |            |
+| **DevicePathUtilitiesProtocol**                                |
+| AppendDeviceNode                    | PASS        | PASS       |
+| AppendDevicePathInstance            | PASS        | PASS       |
+| AppendDevicePath                    | PASS        | PASS       |
+| CreateDeviceNode                    | PASS        | PASS       |
+| DuplicateDevicePath                 | PASS        | PASS       |
+| GetDevicePathSize                   | PASS        | PASS       |
+| GetNextDevicePathInstance           | PASS        | PASS       |
+| IsDevicePathMultiInstance           | N/A         | PASS       |
+|                                     |             |            |
+| **DevicePathToTextProtocol**                                   |
+| ConvertDeviceNodeToText             | PASS        | FAIL       |
+| ConvertDevicePathToText             | PASS        | FAIL       |
+|                                     |             |            |
+| **SimpleFileSystemProtocol**                                   |
+| Close                               | N/A         | PASS       |
+| Delete                              | PASS        | PASS       |
+| FlushEx                             | -           | -          |
+| Flush                               | FAIL        | PASS       |
+| GetInfo                             | PASS        | FAIL       |
+| GetPosition                         | PASS        | -          |
+| OpenEx                              | -           | -          |
+| OpenVolume                          | N/A         | FAIL       |
+| Open                                | PASS        | PASS       |
+| ReadEx                              | -           | -          |
+| SetInfo                             | FAIL        | FAIL       |
+| SetPosition                         | PASS        | PASS       |
+| WriteEx                             | -           | -          |
+| Write                               | N/A         | -          |
+|                                     |             |            |
+| **BlockIOProtocol**                                            |
+| FlushBlocks                         | -           | -          |
+| MediaInfoIntegrity                  | N/A         | -          |
+| ReadBlocks                          | PASS        | PASS       |
+| Reset                               | N/A         | PASS       |
+|                                     |             |            |
+| **SimpleNetworkProtocol**                                      |
+| GetStatus                           | PASS        | PASS       |
+| Initialize                          | PASS        | PASS       |
+| MCastIpToMac                        | PASS        | PASS       |
+| NVData                              | -           | -          |
+| ReceiveFilterConf                   | -           | FAIL       |
+| Receive                             | PASS        | N/A        |
+| Reset                               | N/A         | -          |
+| Shutdown                            | PASS        | PASS       |
+| Start                               | PASS        | PASS       |
+| StationAddress                      | -           | -          |
+| Statistics                          | -           | PASS       |
+| Stop                                | PASS        | PASS       |
+| Transmit                            | PASS        | N/A        |
+|                                     |             |            |
+| **UnicodeCollation2Protocol**                                  |
 | FatToStr                            | N/A         | PASS       |
 | MetaiMatch                          | N/A         | PASS       |
 | StriColl                            | N/A         | PASS       |
 | StrLwr                              | N/A         | PASS       |
 | StrToFat                            | N/A         | PASS       |
-| StrUpr                              | N/A         | FAIL 1)    |
+| StrUpr                              | N/A         | PASS       |
 |                                     |             |            |
-
-1) UEFI SCT reports a false positive when converting Cyrrilic letters, cf.
-   https://bugzilla.tianocore.org/show_bug.cgi?id=1911
-
-
-## ConsoleSupportTest
-
-| Test                                | Conformance | Function   |
-| ----------------------------------- | ----------- | ---------- |
+| **HIIDatabaseProtocol**                                        |
+| ExportPackageLists                  | FAIL        | -          |
+| FindKeyboardLayouts                 | PASS        | -          |
+| GetKeyboardLayout                   | PASS        | -          |
+| GetPackageListHandle                | FAIL        | -          |
+| ListPackageLists                    | PASS        | -          |
+| NewPackageList                      | PASS        | FAIL       |
+| RegisterPackageNotify               | PASS        | N/A        |
+| RemovePackageList                   | PASS        | -          |
+| SetKeyboardLayout                   | FAIL        | -          |
+| UnregisterPackageNotify             | PASS        | N/A        |
+| UpdatePackageList                   | N/A         | -          |
 |                                     |             |            |
-| SimpleTextInputExProtocolTest       | FAIL 1)     | N/A        |
-| SimpleInputProtocolTest             | PASS        | N/A        |
-| SimpleOutputProtocolTest            | N/A         | PASS       |
+| **HIIStringProtocol**               |             |            |
+| GetLanguages                        | -           | -          |
+| GetSecondaryLanguages               | -           | -          |
+| GetString                           | -           | -          |
+| NewString                           | -           | -          |
+| SetString                           | -           | -          |
 |                                     |             |            |
-
-1) SetToggleState returns EFI\_UNSUPPORTED. SCT expected
-   EFI\_INVALID\_PARAMETER for invalid parameter. Testing a parameter
-   for an unsupported function does not make much sense.
-
+| **SimpleTextInputExProtocol**                                  |
+| ReadKeyStrokeEx                     | PASS        | not tested |
+| RegisterKeyNotify                   | PASS        | N/A        |
+| Reset                               | N/A         | PASS       |
+| SetState                            | PASS        | N/A        |
+| UnregisterKeyNotify                 | PASS        | N/A        |
+|                                     |             |            |
+| **SimpleInputProtocol**                                        |
+| Reset                               | N/A         | PASS       |
+|                                     |             |            |
+| **SimpleOutputProtocol**                                       |
+| ClearScreen                         | N/A         | PASS       |
+| EnableCursor                        | N/A         | PASS       |
+| OutputString                        | N/A         | PASS       |
+| QueryMode                           | PASS        | PASS       |
+| Reset                               | N/A         | PASS       |
+| SetAttribute                        | N/A         | PASS       |
+| SetCursorPosition                   | PASS        | PASS       |
+| SetMode                             | PASS        | PASS       |
+| TestString                          | N/A         | PASS       |
+|                                     |             |            |
+| **GraphicsOutputProtocol**          |             |            |
+| BltVideoBltBuffer                   | N/A         | -          |
+| BltVideoFill                        | N/A         | -          |
+| BltVideoToVideo                     | N/A         | -          |
+| Blt                                 | -           | N/A        |
+| QueryMode                           | -           | -          |
+| SetMode                             | -           | -          |
