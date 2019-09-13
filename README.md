@@ -54,7 +54,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 | UninstallProtocolInterface          | PASS        | PASS       |
 |                                     |             |            |
 | **Images Services**                                            |
-| ExitBootServices                    | -           | N/A        |
+| ExitBootServices                    | -    1)     | N/A        |
 | Exit                                | PASS        | PASS       |
 | LoadImage                           | PASS        | FAIL       |
 | StartImage                          | PASS        | PASS       |
@@ -69,6 +69,8 @@ are correctly checked (conformance tests) and if a function does it jobs
 | SetWatchDogTimer                    | -           | PASS       |
 | Stall                               | N/A         | PASS       |
 |                                     |             |            |
+
+1) Variable is not persisted across boot.
 
 ## Runtime services
 
