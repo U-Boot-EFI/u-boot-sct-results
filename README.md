@@ -218,3 +218,8 @@ are correctly checked (conformance tests) and if a function does it jobs
 | Blt                                 | PASS        | N/A        |
 | QueryMode                           | PASS        | PASS       |
 | SetMode                             | PASS        | PASS       |
+
+## Missing protocol implementations
+
+* EFI\_DECOMPRESS\_PROTOCOL - required for any UEFI system
+* EFI\_DISK\_IO\_PROTOCOL - required if device can boot from a disk device
