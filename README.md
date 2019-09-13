@@ -1,6 +1,6 @@
 # SCT test results
 
-Spetember 12th, 2019
+September 12th, 2019
 
 The UEFI SCT test implementation has separate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
