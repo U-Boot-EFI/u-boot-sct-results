@@ -1,0 +1,17 @@
+Summary for 2020-11-28 results
+==============================
+
+The SCT was run using the U-Boot sandbox on ARMv8::
+
+    ./u-boot -T -l
+
+Selected tests
+--------------
+
+See `uboot-2020-11-28.seq <https://github.com/U-Boot-EFI/u-boot-sct-results/blob/master/uboot-2020-11-28.seq>`_
+
+Codebase
+--------
+
+* origin/master 7889951d0f56eab746a7c8fde350a022ba0361ca
+* yet to publish FAT patches
