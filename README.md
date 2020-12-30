@@ -1,6 +1,6 @@
 # SCT test results
 
-October 28th, 2020
+Dezember 10th, 2020
 
 The UEFI SCT test implementation has separate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
@@ -54,9 +54,9 @@ are correctly checked (conformance tests) and if a function does it jobs
 | UninstallProtocolInterface          | PASS        | PASS       |
 |                                     |             |            |
 | **Images Services**                                            |
-| ExitBootServices                    | -    1)     | N/A        |
+| ExitBootServices                    | PASS        | N/A        |
 | Exit                                | PASS        | PASS       |
-| LoadImage                           | PASS        | FAIL       |
+| LoadImage                           | PASS        | FAIL 1)    |
 | StartImage                          | PASS        | PASS       |
 | UnloadImage                         | PASS        | PASS       |
 |                                     |             |            |
@@ -70,7 +70,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 | Stall                               | N/A         | PASS       |
 |                                     |             |            |
 
-1) Variable is not persisted across boot.
+1) Loading of HII resource file not supported.
 
 ## Runtime services
 
