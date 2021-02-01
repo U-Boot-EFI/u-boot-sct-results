@@ -47,7 +47,7 @@ Start the sandbox with
 
 ## Test results
 
-Dezember 10th, 2020
+February 1st, 2021
 
 The UEFI SCT test implementation has separate routines for testing if parameters
 are correctly checked (conformance tests) and if a function does it jobs
@@ -83,7 +83,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 |                                     |             |            |
 | **Protocol Handler Services**                                  |
 | CloseProtocol                       | PASS        | PASS       |
-| ConnectController                   | PASS        | FAIL       |
+| ConnectController                   | PASS        | FAIL 1)    |
 | DisconnectController                | PASS        | PASS       |
 | HandleProtocol                      | PASS        | PASS       |
 | InstallMultipleProtocolInterfaces   | PASS        | PASS       |
@@ -103,7 +103,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 | **Images Services**                                            |
 | ExitBootServices                    | PASS        | N/A        |
 | Exit                                | PASS        | PASS       |
-| LoadImage                           | PASS        | FAIL 1)    |
+| LoadImage                           | PASS        | FAIL 2)    |
 | StartImage                          | PASS        | PASS       |
 | UnloadImage                         | PASS        | PASS       |
 |                                     |             |            |
@@ -117,7 +117,9 @@ are correctly checked (conformance tests) and if a function does it jobs
 | Stall                               | N/A         | PASS       |
 |                                     |             |            |
 
-1) Loading of HII resource file not supported.
+1) Override protocols not supported
+
+2) Loading of HII resource file not supported.
 
 ### Runtime services
 
@@ -130,7 +132,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 | GetVariable                          | PASS        | PASS       |
 | HardwareErrorRecord                  | -           | -          |
 | QueryVariableInfo                    | FAIL        | -          |
-| SetVariable                          | FAIL        | FAIL       |
+| SetVariable                          | PASS        | PASS       |
 |                                      |             |            |
 | **Time Services**                                               |
 | GetTime                              | PASS        | PASS       |
@@ -175,17 +177,17 @@ are correctly checked (conformance tests) and if a function does it jobs
 | **SimpleFileSystemProtocol**                                   |
 | Close                               | N/A         | PASS       |
 | Delete                              | PASS        | PASS       |
-| FlushEx                             | -           | -          |
-| Flush                               | FAIL        | PASS       |
-| GetInfo                             | PASS        | FAIL       |
+| FlushEx                             | PASS        | PASS       |
+| Flush                               | PASS        | PASS       |
+| GetInfo                             | PASS        | PASS       |
 | GetPosition                         | PASS        | -          |
-| OpenEx                              | -           | -          |
-| OpenVolume                          | N/A         | FAIL       |
+| OpenEx                              | PASS        | PASS       |
+| OpenVolume                          | N/A         | PASS       |
 | Open                                | PASS        | PASS       |
-| ReadEx                              | -           | -          |
+| ReadEx                              | PASS        | PASS       |
 | SetInfo                             | FAIL        | FAIL       |
 | SetPosition                         | PASS        | PASS       |
-| WriteEx                             | -           | -          |
+| WriteEx                             | FAIL        | -          |
 | Write                               | N/A         | -          |
 |                                     |             |            |
 | **BlockIOProtocol**                                            |
@@ -228,7 +230,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 | RemovePackageList                   | PASS        | -          |
 | SetKeyboardLayout                   | FAIL        | -          |
 | UnregisterPackageNotify             | PASS        | N/A        |
-| UpdatePackageList                   | N/A         | -          |
+| UpdatePackageList                   | PASS        | -          |
 |                                     |             |            |
 | **HIIStringProtocol**               |             |            |
 | GetLanguages                        | -           | -          |
@@ -238,7 +240,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 | SetString                           | -           | -          |
 |                                     |             |            |
 | **SimpleTextInputExProtocol**                                  |
-| ReadKeyStrokeEx                     | PASS        | not tested |
+| ReadKeyStrokeEx                     | PASS        | -          |
 | RegisterKeyNotify                   | PASS        | N/A        |
 | Reset                               | N/A         | PASS       |
 | SetState                            | PASS        | N/A        |
@@ -259,12 +261,19 @@ are correctly checked (conformance tests) and if a function does it jobs
 | TestString                          | N/A         | PASS       |
 |                                     |             |            |
 | **GraphicsOutputProtocol**          |             |            |
-| BltVideoBltBuffer                   | N/A         | PASS       |
-| BltVideoFill                        | N/A         | PASS       |
+| BltVideoBltBuffer                   | N/A         | FAIL       |
+| BltVideoFill                        | N/A         | FAIL       |
 | BltVideoToVideo                     | N/A         | PASS       |
 | Blt                                 | PASS        | N/A        |
 | QueryMode                           | PASS        | PASS       |
 | SetMode                             | PASS        | PASS       |
+|                                     |             |            |
+| **RNGProtocolTest**                                            |
+| GetInfo                             | PASS        | PASS       |
+| GetRNG                              | PASS        | PASS       |
+|                                     |             |            |
+
+
 
 ### Missing protocol implementations
 
