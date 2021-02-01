@@ -1,4 +1,51 @@
-# SCT test results
+# UEFI Self Certification Test (SCT)
+
+## Running the SCT on the U-Boot sandbox
+
+The SCT can be run on real hardware, on QEMU, or on the U-Boot sandbox.
+
+For running on the sandbox execute
+
+    make sandbox_defconfig
+
+Then apply the following changes to file *.config*:
+
+    CONFIG_SANDBOX_RAM_SIZE_MB=256
+    CONSOLE_TRUETYPE=n
+    CONFIG_SYS_WHITE_ON_BLACK=y
+    CONFIG_USE_PREBOOT=y
+    CONFIG_PREBOOT=host bind 0 sct.img && load host 0:1 $kernel_addr_r Shell.efi && bootefi $kernel_addr_r
+
+* The memory size is increased to work around a memory leak when running the
+  SCT.
+
+* The truetype console does not support colored output yet and by default does
+  not use a mono-spaced font.
+
+* PREBOOT is needed to run the tests which involve resets.
+
+On the SCT image create a script *startup.nsh* like:
+
+    FS0:
+    cls
+    if exist run then
+      rm run
+      SCT -s uboot.seq
+    else
+      SCT -c
+    endif
+    SCT -g result.csv
+    @echo "Test results are in Report\result.csv"
+    @echo "DONE - SCT COMPLETED"
+    reset -s
+
+The script takes care of continuing the SCT after resets.
+
+Start the sandbox with
+
+    ./u-boot -T -l
+
+## Test results
 
 Dezember 10th, 2020
 
@@ -11,7 +58,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 * \- signifies that the test reported no result
 * N/A signifies that no test for this category is available.
 
-## Boot services
+### Boot services
 
 | Service                             | Conformance | Function   |
 | ----------------------------------- | ----------- | ---------- |
@@ -72,7 +119,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 
 1) Loading of HII resource file not supported.
 
-## Runtime services
+### Runtime services
 
 | Service                              | Conformance | Function   |
 | ------------------------------------ | ----------- | ---------- |
@@ -99,7 +146,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 1) Setting of daylight saving time is not fully supported, setting
    the time zone is not supported.
 
-## Protocols
+### Protocols
 
 | Protocol                            | Conformance | Function   |
 | ----------------------------------- | ----------- | ---------- |
@@ -219,7 +266,7 @@ are correctly checked (conformance tests) and if a function does it jobs
 | QueryMode                           | PASS        | PASS       |
 | SetMode                             | PASS        | PASS       |
 
-## Missing protocol implementations
+### Missing protocol implementations
 
 * EFI\_DECOMPRESS\_PROTOCOL - required for any UEFI system
 * EFI\_DISK\_IO\_PROTOCOL - required if device can boot from a disk device
