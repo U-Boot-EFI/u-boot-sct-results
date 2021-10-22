@@ -1,0 +1,20 @@
+Summary for 2021-10-01 results
+==============================
+
+The U-Boot master branch with a few additional patches that will appear in the
+v2022.04 release was tested.
+
+The SCT was run using the U-Boot sandbox on ARMv8::
+
+    ./u-boot -S -T
+
+Selected tests
+--------------
+
+See `uboot-2021-01-01.seq <https://github.com/U-Boot-EFI/u-boot-sct-results/blob/master/uboot-2021-01-01.seq>`_
+
+Codebase
+--------
+
+* origin/master fb1018106a7bbb1a0d723029f6760b1b1b4d306d
+* yet to publish documentation and UEFI patches
