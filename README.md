@@ -44,7 +44,7 @@ The script takes care of continuing the SCT after resets.
 
 Start the sandbox with
 
-    ./u-boot -T -l
+    ./u-boot -l -S -T
 
 ## Test results
 
