@@ -1,0 +1,20 @@
+Summary for 2022-02-04 results
+==============================
+
+The U-Boot master branch with a few additional patches that will appear in the
+v2022.04 release was tested.
+
+The SCT was run using the U-Boot sandbox on ARM7::
+
+    ./u-boot -S -T
+
+Selected tests
+--------------
+
+See `uboot-2022-02-04.seq <https://github.com/U-Boot-EFI/u-boot-sct-results/blob/master/uboot-2022-02-04.seq>`_
+
+Codebase
+--------
+
+* U-Boot origin/master 3e5f4b337d89e95af9d3700a4b055b552bf22ac4
+* edk2-test origin/master fb1018106a7bbb1a0d723029f6760b1b1b4d306d
