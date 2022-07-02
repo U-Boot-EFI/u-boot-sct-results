@@ -17,10 +17,14 @@ Then apply the following changes to file *.config*:
     CONFIG_USE_PREBOOT=y
     CONFIG_PREBOOT=host bind 0 sct.img && load host 0:1 $kernel_addr_r Shell.efi && bootefi $kernel_addr_r
 
+On 32-bit systems additionally apply:
+
+    CONFIG_HOST_32BIT=y
+
 * The memory size is increased to work around a memory leak when running the
   SCT.
 
-* The truetype console does not support colored output yet and by default does
+* The TrueType console does not support colored output yet and by default does
   not use a mono-spaced font.
 
 * PREBOOT is needed to run the tests which involve resets.
