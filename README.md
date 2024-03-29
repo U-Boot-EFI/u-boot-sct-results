@@ -11,7 +11,7 @@ For running on the sandbox execute
 Then apply the following changes to file *.config*:
 
     CONFIG_SANDBOX_RAM_SIZE_MB=256
-    CONSOLE_TRUETYPE=n
+    # CONFIG_CONSOLE_TRUETYPE is not set
     CONFIG_SANDBOX_CRASH_RESET=y
     CONFIG_SYS_WHITE_ON_BLACK=y
     CONFIG_USE_PREBOOT=y
