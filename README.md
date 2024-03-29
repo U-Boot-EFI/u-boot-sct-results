@@ -15,7 +15,7 @@ Then apply the following changes to file *.config*:
     CONFIG_SANDBOX_CRASH_RESET=y
     CONFIG_SYS_WHITE_ON_BLACK=y
     CONFIG_USE_PREBOOT=y
-    CONFIG_PREBOOT=host bind 0 sct.img && load host 0:1 $kernel_addr_r Shell.efi && bootefi $kernel_addr_r
+    CONFIG_PREBOOT="host bind 0 sct.img && load host 0:1 $kernel_addr_r Shell.efi && bootefi $kernel_addr_r"
 
 On 32-bit systems additionally apply:
 
