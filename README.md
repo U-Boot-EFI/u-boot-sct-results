@@ -29,26 +29,9 @@ On 32-bit systems additionally apply:
 
 * PREBOOT is needed to run the tests which involve resets.
 
-On the SCT image create a script *startup.nsh* like:
-
-    FS0:
-    cls
-    if exist run then
-      rm run
-      SCT -s uboot.seq
-    else
-      SCT -c
-    endif
-    SCT -g result.csv
-    @echo "Test results are in Report\result.csv"
-    @echo "DONE - SCT COMPLETED"
-    reset -s
-
-The script takes care of continuing the SCT after resets.
-
 Start the sandbox with
 
-    ./u-boot -l -S -T
+    ./u-boot -l -S -T -N
 
 ## Test results
 
