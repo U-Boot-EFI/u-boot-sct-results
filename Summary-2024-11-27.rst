@@ -1,0 +1,19 @@
+Summary for 2024-11-07 results
+==============================
+
+The U-Boot current master branch was tested.
+
+The SCT was run using the U-Boot sandbox on aarch64::
+
+    ./u-boot -S -T -l -N
+
+Selected tests
+--------------
+
+All available UEFI tests were executed.
+
+Codebase
+--------
+
+* U-Boot v2025.01-rc2-31-gb7d4c80fce4
+* edk2-test edk2-test-stable202406
